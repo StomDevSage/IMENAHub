@@ -1,0 +1,14 @@
+# IMENA Hub - Rwanda's United Digital Ecosystem
+# Allow all crawlers to index the site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://stomdevsage.github.io/IMENAHub/sitemap.xml
+
+# Disable crawling of admin or private areas (if any)
+Disallow: /private/
+Disallow: /admin/
+
+# Crawl delay to be respectful to servers
+Crawl-delay: 1
