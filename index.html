@@ -303,6 +303,68 @@
             display: flex;
         }
 
+        /* Footer */
+        .premium-footer {
+            background: rgba(5, 8, 15, 0.9);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(10,255,157,0.2);
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 5rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .footer-col h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .footer-col a {
+            display: block;
+            color: #aaa;
+            text-decoration: none;
+            margin: 0.5rem 0;
+            transition: var(--transition);
+        }
+        .footer-col a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.85rem;
+            color: #888;
+        }
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .social-icons a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(10,255,157,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        .social-icons a:hover i {
+            color: #010101;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -355,6 +417,18 @@
             z-index: 9998;
             filter: blur(40px);
         }
+        .timeline-item {
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+        }
+        .cursor {
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%,100%{opacity:1} 50%{opacity:0}
+        }
     </style>
 </head>
 <body>
@@ -378,7 +452,7 @@
         <a href="#projects">Projects</a>
         <a href="#founder">Founder</a>
         <a href="#community">Community</a>
-        <a href="#pricing">Pricing</a>
+        <a href="#pricing">Membership</a>
         <button class="btn-outline" id="loginBtn" style="padding: 0.4rem 1.2rem;">Sign In</button>
         <button class="btn-primary" id="signupBtn" style="padding: 0.4rem 1.2rem;">Get Started</button>
     </div>
@@ -415,11 +489,12 @@
         </div>
     </section>
 
-    <!-- Projects Section with Filters -->
+    <!-- Projects Section with Live IMENA Projects -->
     <section id="projects">
         <div class="container">
             <h2 style="font-size: 2.8rem; text-align: center;">IMENA Digital Ecosystem</h2>
             <div class="glow-line" style="width: 150px;"></div>
+            <p style="text-align: center; margin-bottom: 2rem;">Live projects building Rwanda's tech future — click any card to explore</p>
             <div class="project-filters" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 2rem 0;">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="ai">AI & ML</button>
@@ -427,37 +502,49 @@
                 <button class="filter-btn" data-filter="web">Web Dev</button>
             </div>
             <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <!-- IMENA Trainer AI -->
                 <div class="project-card" data-category="ai" onclick="window.open('https://stomcodev.github.io/IMENA-TRAINER-AI/', '_blank')">
                     <div class="project-icon"><i class="fas fa-brain fa-3x" style="color: var(--primary);"></i></div>
                     <h3>IMENA Trainer AI</h3>
-                    <p>Adaptive learning assistant with personalized AI tutoring.</p>
-                    <div class="tech-stack" style="display: flex; gap: 0.5rem; margin-top: 1rem;">
-                        <span style="background: rgba(10,255,157,0.2); padding: 0.2rem 0.8rem; border-radius: 20px;">Python</span>
-                        <span style="background: rgba(10,255,157,0.2); padding: 0.2rem 0.8rem; border-radius: 20px;">TensorFlow</span>
+                    <p>REB-aligned intelligent national learning platform with personalized AI tutoring for all levels from P1 to S6.</p>
+                    <div class="tech-stack" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
+                        <span style="background: rgba(10,255,157,0.2); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem;">AI</span>
+                        <span style="background: rgba(10,255,157,0.2); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem;">REB Curriculum</span>
+                        <span style="background: rgba(10,255,157,0.2); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem;">Multi-language</span>
                     </div>
                     <div class="progress-bar" style="height: 4px; background: #333; border-radius: 2px; margin-top: 1rem;">
                         <div style="width: 85%; height: 100%; background: var(--primary); border-radius: 2px;"></div>
                     </div>
                 </div>
+                <!-- IMENA CV Builder -->
                 <div class="project-card" data-category="web" onclick="window.open('https://imena-cv-builder.netlify.app/', '_blank')">
                     <div class="project-icon"><i class="fas fa-file-alt fa-3x" style="color: var(--primary);"></i></div>
                     <h3>IMENA CV Builder</h3>
-                    <p>AI-powered professional portfolio builder for Rwandan youth.</p>
-                    <div class="tech-stack"><span style="background: rgba(10,255,157,0.2); padding: 0.2rem 0.8rem; border-radius: 20px;">React</span></div>
+                    <p>Free professional CV builder with real-time preview, multiple templates, and PDF download. Available in English, Kinyarwanda, and French.</p>
+                    <div class="tech-stack" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
+                        <span style="background: rgba(10,255,157,0.2); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem;">React</span>
+                        <span style="background: rgba(10,255,157,0.2); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem;">PDF Export</span>
+                    </div>
                     <div class="progress-bar"><div style="width: 92%; background: var(--primary);"></div></div>
                 </div>
+                <!-- IMENA Trinity College -->
                 <div class="project-card" data-category="edtech" onclick="window.open('https://stomcodev.github.io/IMENA-TRINITY-COLLEGE/', '_blank')">
                     <div class="project-icon"><i class="fas fa-university fa-3x" style="color: var(--primary);"></i></div>
                     <h3>IMENA Trinity College</h3>
-                    <p>Digital campus for collaborative learning and innovation.</p>
-                    <div class="tech-stack"><span>Vue.js</span><span>Firebase</span></div>
-                    <div class="progress-bar"><div style="width: 78%;"></div></div>
+                    <p>Bugesera's premier educational institution from Nursery to O'Level. Quality education with modern facilities and character development.</p>
+                    <div class="tech-stack" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
+                        <span style="background: rgba(10,255,157,0.2); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem;">School CMS</span>
+                        <span style="background: rgba(10,255,157,0.2); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem;">REB Curriculum</span>
+                    </div>
+                    <div class="progress-bar"><div style="width: 78%; background: var(--primary);"></div></div>
                 </div>
             </div>
+            <div class="glow-line" style="margin: 2rem 0;"></div>
+            <p style="text-align: center; font-size: 0.9rem;">🚀 More projects: ICT Holiday Camp, EdTech Systems, Digital Learning Labs — expanding the ecosystem.</p>
         </div>
     </section>
 
-    <!-- Founder Interactive Timeline -->
+    <!-- Founder Section with Developer Portfolio -->
     <section id="founder">
         <div class="container">
             <div class="glass-card" style="padding: 2.5rem;">
@@ -465,36 +552,44 @@
                 <div class="glow-line" style="width: 100px;"></div>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
                     <div>
-                        <h3 style="font-size: 2rem;">StomCodeV</h3>
-                        <p style="margin: 1rem 0;">TUYISENGE Jean Chrisostom — Passionate innovator and ICT enthusiast building ideas and educational technologies for Rwanda's future.</p>
+                        <h3 style="font-size: 2rem;">TUYISENGE Jean Chrisostom</h3>
+                        <p style="margin: 1rem 0;">Passionate student teacher & web developer creating innovative solutions for modern education and digital experiences. Pursuing a Diploma in Language Education at TTC MUHANGA.</p>
                         <div class="skills">
-                            <div>ICT Architecture <span>95%</span><div style="height: 6px; background:#333; border-radius:3px;"><div style="width:95%; height:100%; background:var(--primary); border-radius:3px;"></div></div></div>
-                            <div>EdTech Development <span>90%</span><div><div style="width:90%;"></div></div></div>
-                            <div>AI Integration <span>88%</span><div><div style="width:88%;"></div></div></div>
+                            <div>ICT Architecture <span>95%</span><div style="height: 6px; background:#333; border-radius:3px; margin:5px 0;"><div style="width:95%; height:100%; background:var(--primary); border-radius:3px;"></div></div></div>
+                            <div>EdTech Development <span>90%</span><div style="height: 6px; background:#333; border-radius:3px; margin:5px 0;"><div style="width:90%; height:100%; background:var(--primary); border-radius:3px;"></div></div></div>
+                            <div>AI Integration <span>88%</span><div style="height: 6px; background:#333; border-radius:3px; margin:5px 0;"><div style="width:88%; height:100%; background:var(--primary); border-radius:3px;"></div></div></div>
+                        </div>
+                        <div style="margin-top: 1.5rem;">
+                            <button class="btn-outline" onclick="window.open('https://stomcodev.github.io/TUYISENGE-Jean-Chrisostom/', '_blank')"><i class="fas fa-user"></i> View Full Portfolio</button>
                         </div>
                     </div>
                     <div class="timeline">
                         <div class="timeline-item"><i class="fas fa-calendar"></i> 2020 - Founded IMENA Initiative</div>
-                        <div class="timeline-item"><i class="fas fa-calendar"></i> 2022 - Launched First EdTech Platform</div>
-                        <div class="timeline-item"><i class="fas fa-calendar"></i> 2024 - IMENA Ecosystem Launch</div>
-                        <div class="timeline-item"><i class="fas fa-calendar"></i> 2025 - AI Learning Assistant Deployed</div>
+                        <div class="timeline-item"><i class="fas fa-calendar"></i> 2022 - Launched CV Builder</div>
+                        <div class="timeline-item"><i class="fas fa-calendar"></i> 2023 - IMENA Trinity College Website</div>
+                        <div class="timeline-item"><i class="fas fa-calendar"></i> 2024 - IMENA Trainer AI Platform</div>
+                        <div class="timeline-item"><i class="fas fa-calendar"></i> 2025 - Full Ecosystem Expansion</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Community Leaderboard -->
+    <!-- Community Section -->
     <section id="community">
         <div class="container">
             <h2 style="text-align: center;">Community Hall of Fame</h2>
             <div class="glow-line" style="width: 150px;"></div>
             <div class="leaderboard glass-card" style="padding: 2rem;">
                 <div class="leaderboard-item" style="display: flex; justify-content: space-between; padding: 1rem; border-bottom: 1px solid rgba(10,255,157,0.2);">
-                    <span><i class="fas fa-crown" style="color: gold;"></i> 1. Aline U.</span><span>12,450 XP</span>
+                    <span><i class="fas fa-crown" style="color: gold;"></i> 1. NTABARONKERARIMWE Saidath</span><span>12,450 XP - Parent Leader</span>
                 </div>
-                <div class="leaderboard-item" style="display: flex; justify-content: space-between; padding: 1rem;"><span>2. Eric M.</span><span>9,820 XP</span></div>
-                <div class="leaderboard-item" style="display: flex; justify-content: space-between; padding: 1rem;"><span>3. Grace N.</span><span>8,340 XP</span></div>
+                <div class="leaderboard-item" style="display: flex; justify-content: space-between; padding: 1rem; border-bottom: 1px solid rgba(10,255,157,0.2);">
+                    <span><i class="fas fa-star" style="color: silver;"></i> 2. NIYONKURU Emmanuel</span><span>9,820 XP - S3 Promotion Leader 2023</span>
+                </div>
+                <div class="leaderboard-item" style="display: flex; justify-content: space-between; padding: 1rem;">
+                    <span><i class="fas fa-award"></i> 3. TUYISHIMIRE Jean Pierre</span><span>8,340 XP - Community Leader</span>
+                </div>
             </div>
         </div>
     </section>
@@ -508,23 +603,58 @@
                 <div class="glass-card" style="padding: 2rem; text-align: center;">
                     <h3>Starter</h3>
                     <p class="price" style="font-size: 2.5rem; font-weight: 800;">FREE</p>
-                    <ul style="list-style: none; margin: 1rem 0;"><li>✓ Basic Courses</li><li>✓ Community Access</li></ul>
-                    <button class="btn-outline" onclick="alert('Registration coming soon!')">Get Started</button>
+                    <ul style="list-style: none; margin: 1rem 0;"><li>✓ Basic Courses</li><li>✓ Community Access</li><li>✓ CV Builder</li></ul>
+                    <button class="btn-outline" onclick="alert('Registration coming soon! Join our waitlist.')">Get Started</button>
                 </div>
                 <div class="glass-card" style="padding: 2rem; text-align: center; border: 2px solid var(--primary);">
                     <h3>Pro</h3>
                     <p class="price" style="font-size: 2.5rem;">$29<span style="font-size:1rem;">/mo</span></p>
-                    <ul><li>✓ All Courses</li><li>✓ AI Mentor</li><li>✓ Certificate</li></ul>
-                    <button class="btn-primary" onclick="alert('Secure checkout demo')">Subscribe →</button>
+                    <ul style="list-style: none;"><li>✓ All Courses</li><li>✓ AI Mentor Access</li><li>✓ Certificate Generation</li><li>✓ Priority Support</li></ul>
+                    <button class="btn-primary" onclick="alert('Secure checkout demo. MTN MoMo, Airtel, and card coming soon.')">Subscribe →</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer style="background: rgba(0,0,0,0.5); padding: 3rem; margin-top: 4rem; text-align: center;">
-        <p>Developed by <a href="https://imena-ecosystem.netlify.app/" target="_blank" style="color: var(--primary);">IMENA Hub</a> — Inspired by Rwanda's Imena Heroes</p>
-        <p style="margin-top: 1rem; font-size: 0.8rem;">Mutara III Rudahigwa • Agathe Uwiringiyimana • Nyange Students — Their spirit lives in every line of code.</p>
+    <!-- Premium Footer -->
+    <footer class="premium-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4><i class="fas fa-brain"></i> IMENA Hub</h4>
+                <p style="color: #aaa; margin-bottom: 1rem;">Building ideas and digital solutions for Rwanda through technology, innovation, and education.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Ecosystem</h4>
+                <a href="#" onclick="window.open('https://imena-cv-builder.netlify.app/', '_blank')">CV Builder</a>
+                <a href="#" onclick="window.open('https://stomcodev.github.io/IMENA-TRAINER-AI/', '_blank')">Trainer AI</a>
+                <a href="#" onclick="window.open('https://stomcodev.github.io/IMENA-TRINITY-COLLEGE/', '_blank')">Trinity College</a>
+                <a href="#" onclick="window.open('https://imena-ecosystem.netlify.app/', '_blank')">IMENA Ecosystem</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="#">Blog</a>
+                <a href="#">Documentation</a>
+                <a href="#">API Status</a>
+                <a href="#">Support Center</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Accessibility</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="currentYear"></span> IMENA Hub. Developed by TUYISENGE Jean Chrisostom (StomCodeV).</p>
+            <p style="margin-top: 0.5rem; font-size: 0.75rem;">Mutara III Rudahigwa • Agathe Uwiringiyimana • Nyange Students — Their spirit lives in every line of code.</p>
+        </div>
     </footer>
 </main>
 
@@ -532,11 +662,11 @@
 <div class="chatbot">
     <div class="chat-toggle" id="chatToggle"><i class="fas fa-comment-dots fa-2x"></i></div>
     <div class="chat-window" id="chatWindow">
-        <div style="padding: 1rem; background: var(--primary); color: #010101; font-weight: bold;">AI Assistant</div>
-        <div id="chatMessages" style="flex:1; padding: 1rem; overflow-y: auto;">🤖 Hello! I'm your AI learning companion. Ask me anything about IMENA Hub!</div>
+        <div style="padding: 1rem; background: var(--primary); color: #010101; font-weight: bold;">🤖 IMENA AI Assistant</div>
+        <div id="chatMessages" style="flex:1; padding: 1rem; overflow-y: auto;">Hello! 👋 I'm your AI learning companion. Ask me about IMENA Hub, our projects, or how to get started!</div>
         <div style="padding: 1rem; display: flex; gap: 0.5rem;">
             <input type="text" id="chatInput" placeholder="Ask me..." style="flex:1; padding: 0.5rem; border-radius: 20px; border: none; background: #222; color: white;">
-            <button id="chatSend" style="background: var(--primary); border: none; padding: 0.5rem 1rem; border-radius: 20px;">Send</button>
+            <button id="chatSend" style="background: var(--primary); border: none; padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer;">Send</button>
         </div>
     </div>
 </div>
@@ -547,7 +677,7 @@
     // Loading screen
     setTimeout(() => document.getElementById('loading').classList.add('hidden'), 1500);
     
-    // Three.js Scene Setup
+    // Three.js Scene
     const canvas = document.getElementById('bg-canvas');
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x010118);
@@ -692,7 +822,7 @@
         if (!msg) return;
         const messages = document.getElementById('chatMessages');
         messages.innerHTML += `<div>👤 ${msg}</div>`;
-        messages.innerHTML += `<div>🤖 Thank you! Visit our courses to start learning. 🇷🇼</div>`;
+        messages.innerHTML += `<div>🤖 Thank you for reaching out! Check out our CV Builder, Trainer AI, or Trinity College projects. 🇷🇼</div>`;
         input.value = '';
         messages.scrollTop = messages.scrollHeight;
     };
@@ -702,25 +832,22 @@
     
     // Button Actions
     document.getElementById('exploreHeroBtn').onclick = () => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
-    document.getElementById('watchVideoBtn').onclick = () => alert("🎥 Video: IMENA Hub is building Rwanda's digital future through AI and EdTech innovation.");
+    document.getElementById('watchVideoBtn').onclick = () => alert("🎥 IMENA Hub is building Rwanda's digital future through AI and EdTech innovation.");
     document.getElementById('loginBtn').onclick = () => alert("🔐 Login system coming soon. Join our waitlist!");
     document.getElementById('signupBtn').onclick = () => alert("📝 Early access registration opens next week!");
+    
+    // Footer Year
+    document.getElementById('currentYear').innerText = new Date().getFullYear();
     
     // 3D Hologram placeholder (Rwanda map effect)
     const hologramDiv = document.getElementById('hologramContainer');
     if (hologramDiv) {
-        hologramDiv.innerHTML = `<div style="width:100%; height:100%; background: radial-gradient(circle at center, rgba(10,255,157,0.2), transparent); border-radius: 20px; display: flex; align-items: center; justify-content: center;">
-            <i class="fas fa-map-africa" style="font-size: 8rem; color: var(--primary); opacity: 0.6;"></i>
-            <p style="position: absolute; bottom: 20px;">🇷🇼 Rwanda Innovation Hub</p>
+        hologramDiv.innerHTML = `<div style="width:100%; height:100%; background: radial-gradient(circle at center, rgba(10,255,157,0.15), transparent); border-radius: 20px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <i class="fas fa-map-africa" style="font-size: 6rem; color: var(--primary); opacity: 0.6;"></i>
+            <p style="margin-top: 1rem;">🇷🇼 Rwanda Innovation Hub</p>
+            <p style="font-size: 0.8rem; opacity: 0.7;">Powered by IMENA Ecosystem</p>
         </div>`;
     }
 </script>
-
-<style>
-    .timeline-item { padding: 0.8rem; margin: 0.5rem 0; background: rgba(255,255,255,0.05); border-radius: 12px; }
-    .cursor { animation: blink 1s infinite; }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-    .project-card[style*="display: none"] { display: none !important; }
-</style>
 </body>
 </html>
