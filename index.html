@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="IMENA Hub - Rwanda's premier digital innovation ecosystem. AI-powered learning, EdTech solutions, and technology for unity and development.">
-    <meta name="theme-color" content="#0aff9d">
-    <title>IMENA Hub | World-Class Digital Innovation Ecosystem - Rwanda</title>
+    <meta name="description" content="IMENA Hub - Rwanda's premier digital innovation ecosystem. Unified platform for CV Builder, Trainer AI, Trinity College, and more. Founded by TUYISENGE Jean Chrisostom.">
+    <meta name="theme-color" content="#00A859">
+    <title>IMENA Hub | United Digital Ecosystem - Rwanda's Global Tech Vision</title>
     
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
@@ -30,22 +30,28 @@
         }
 
         :root {
-            --primary: #0aff9d;
-            --primary-dark: #0acc7d;
-            --secondary: #3a86ff;
-            --secondary-dark: #2a5fd8;
-            --accent: #b5179e;
-            --dark: #05050A;
-            --darker: #020208;
-            --glass: rgba(10, 20, 30, 0.55);
-            --glass-light: rgba(20, 35, 55, 0.45);
+            --rwanda-green: #00A859;
+            --rwanda-green-light: #2ECC71;
+            --rwanda-green-dark: #007A42;
+            --rwanda-blue: #00A3E0;
+            --rwanda-blue-light: #4CC9F0;
+            --rwanda-blue-dark: #0077B6;
+            --rwanda-white: #FFFFFF;
+            --rwanda-white-dim: #F0F4F8;
+            --dark-bg: #0A0E17;
+            --darker-bg: #05080F;
+            --glass: rgba(10, 18, 28, 0.75);
+            --glass-light: rgba(20, 30, 45, 0.6);
+            --text-bright: #FFFFFF;
+            --text-dim: #E0E6ED;
+            --text-muted: #A0AAB8;
             --transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--dark);
-            color: #ffffff;
+            background: var(--dark-bg);
+            color: var(--text-bright);
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
@@ -54,7 +60,7 @@
         .loading-screen {
             position: fixed;
             inset: 0;
-            background: #010101;
+            background: #0A0E17;
             z-index: 10000;
             display: flex;
             align-items: center;
@@ -69,8 +75,8 @@
         .loader {
             width: 60px;
             height: 60px;
-            border: 3px solid rgba(10,255,157,0.2);
-            border-top: 3px solid var(--primary);
+            border: 3px solid rgba(0,168,89,0.2);
+            border-top: 3px solid var(--rwanda-green);
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
@@ -90,18 +96,19 @@
             pointer-events: none;
         }
 
-        /* Aurora Effects */
+        /* Aurora Effects - Rwanda Colors */
         .aurora {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(ellipse at 30% 40%, rgba(10,255,157,0.08), transparent 60%),
-                        radial-gradient(ellipse at 80% 70%, rgba(58,134,255,0.06), transparent 60%);
+            background: radial-gradient(ellipse at 30% 40%, rgba(0,168,89,0.1), transparent 60%),
+                        radial-gradient(ellipse at 80% 70%, rgba(0,163,224,0.08), transparent 60%),
+                        radial-gradient(ellipse at 50% 20%, rgba(255,255,255,0.03), transparent 70%);
             z-index: 1;
             pointer-events: none;
-            animation: auroraPulse 8s ease infinite alternate;
+            animation: auroraPulse 12s ease infinite alternate;
         }
         @keyframes auroraPulse {
             0% { opacity: 0.5; transform: scale(1); }
@@ -114,7 +121,7 @@
             top: 20px;
             left: 5%;
             width: 90%;
-            background: rgba(5, 8, 15, 0.75);
+            background: rgba(10, 18, 28, 0.85);
             backdrop-filter: blur(16px);
             border-radius: 60px;
             padding: 0.8rem 2rem;
@@ -122,27 +129,27 @@
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            border: 1px solid rgba(10,255,157,0.25);
+            border: 1px solid rgba(0,168,89,0.35);
             box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
             transition: var(--transition);
         }
         .navbar.scrolled {
             top: 10px;
-            background: rgba(5, 8, 15, 0.9);
-            border-color: rgba(10,255,157,0.4);
+            background: rgba(5, 8, 15, 0.95);
+            border-color: rgba(0,168,89,0.5);
         }
         .logo {
             font-size: 1.6rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #fff, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--rwanda-white), var(--rwanda-green), var(--rwanda-blue));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             animation: logoGlow 3s ease infinite;
         }
         @keyframes logoGlow {
-            0%, 100% { filter: drop-shadow(0 0 0px var(--primary)); }
-            50% { filter: drop-shadow(0 0 8px var(--primary)); }
+            0%, 100% { filter: drop-shadow(0 0 0px var(--rwanda-green)); }
+            50% { filter: drop-shadow(0 0 8px var(--rwanda-green)); }
         }
         .nav-links {
             display: flex;
@@ -150,14 +157,14 @@
             align-items: center;
         }
         .nav-links a {
-            color: #ddd;
+            color: var(--text-dim);
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
             position: relative;
         }
         .nav-links a:hover, .nav-links a.active {
-            color: var(--primary);
+            color: var(--rwanda-green);
         }
         .nav-links a.active::after {
             content: '';
@@ -166,7 +173,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: var(--primary);
+            background: var(--rwanda-green);
             border-radius: 2px;
         }
         .menu-btn {
@@ -183,23 +190,23 @@
             background: var(--glass);
             backdrop-filter: blur(12px);
             border-radius: 2rem;
-            border: 1px solid rgba(10,255,157,0.2);
+            border: 1px solid rgba(0,168,89,0.3);
             transition: var(--transition);
         }
         .glass-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 0 30px rgba(10,255,157,0.2);
+            border-color: var(--rwanda-green);
+            box-shadow: 0 0 30px rgba(0,168,89,0.25);
             transform: translateY(-5px);
         }
 
         /* Buttons */
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--rwanda-green), var(--rwanda-green-dark));
             border: none;
             padding: 0.8rem 2rem;
             border-radius: 60px;
             font-weight: 600;
-            color: #010101;
+            color: white;
             cursor: pointer;
             transition: var(--transition);
             position: relative;
@@ -207,12 +214,13 @@
         }
         .btn-primary:hover {
             transform: scale(1.02);
-            box-shadow: 0 0 25px rgba(10,255,157,0.5);
+            box-shadow: 0 0 25px rgba(0,168,89,0.5);
+            background: linear-gradient(135deg, var(--rwanda-green-light), var(--rwanda-green));
         }
         .btn-outline {
             background: transparent;
-            border: 1.5px solid var(--primary);
-            color: var(--primary);
+            border: 1.5px solid var(--rwanda-green);
+            color: var(--rwanda-green);
             padding: 0.8rem 2rem;
             border-radius: 60px;
             font-weight: 600;
@@ -220,16 +228,30 @@
             transition: var(--transition);
         }
         .btn-outline:hover {
-            background: var(--primary);
-            color: #010101;
-            box-shadow: 0 0 20px var(--primary);
+            background: var(--rwanda-green);
+            color: white;
+            box-shadow: 0 0 20px var(--rwanda-green);
+        }
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--rwanda-blue), var(--rwanda-blue-dark));
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-secondary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(0,163,224,0.5);
         }
 
         /* Stats Counter */
         .stat-number {
             font-size: 3rem;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--rwanda-green), var(--rwanda-blue), var(--rwanda-white));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -238,32 +260,50 @@
         /* Project Filters */
         .filter-btn {
             background: transparent;
-            border: 1px solid rgba(10,255,157,0.3);
+            border: 1px solid rgba(0,168,89,0.4);
             padding: 0.5rem 1.2rem;
             border-radius: 30px;
-            color: #ccc;
+            color: var(--text-dim);
             cursor: pointer;
             transition: var(--transition);
         }
         .filter-btn.active, .filter-btn:hover {
-            background: var(--primary);
-            color: #010101;
-            border-color: var(--primary);
+            background: var(--rwanda-green);
+            color: white;
+            border-color: var(--rwanda-green);
         }
 
         /* Project Card */
         .project-card {
-            background: rgba(15, 25, 35, 0.7);
+            background: rgba(15, 22, 32, 0.85);
             backdrop-filter: blur(10px);
             border-radius: 1.5rem;
             padding: 1.5rem;
             transition: var(--transition);
             cursor: pointer;
+            border: 1px solid rgba(0,168,89,0.2);
         }
         .project-card:hover {
             transform: translateY(-10px) scale(1.02);
-            border-color: var(--primary);
-            box-shadow: 0 0 35px rgba(10,255,157,0.3);
+            border-color: var(--rwanda-green);
+            box-shadow: 0 0 35px rgba(0,168,89,0.3);
+        }
+        .project-icon {
+            font-size: 2.5rem;
+            color: var(--rwanda-green);
+            margin-bottom: 1rem;
+        }
+
+        /* Hero Section */
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0,168,89,0.12);
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: var(--rwanda-green);
+            margin-bottom: 1rem;
+            border: 1px solid rgba(0,168,89,0.3);
         }
 
         /* Chatbot */
@@ -276,13 +316,13 @@
         .chat-toggle {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--rwanda-green), var(--rwanda-blue));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 0 20px rgba(10,255,157,0.4);
+            box-shadow: 0 0 20px rgba(0,168,89,0.4);
             transition: var(--transition);
         }
         .chat-window {
@@ -291,10 +331,10 @@
             right: 0;
             width: 350px;
             height: 450px;
-            background: rgba(10, 20, 30, 0.95);
+            background: rgba(10, 18, 28, 0.95);
             backdrop-filter: blur(20px);
             border-radius: 1.5rem;
-            border: 1px solid rgba(10,255,157,0.3);
+            border: 1px solid rgba(0,168,89,0.4);
             display: none;
             flex-direction: column;
             overflow: hidden;
@@ -305,9 +345,9 @@
 
         /* Footer */
         .premium-footer {
-            background: rgba(5, 8, 15, 0.9);
+            background: rgba(5, 8, 15, 0.95);
             backdrop-filter: blur(20px);
-            border-top: 1px solid rgba(10,255,157,0.2);
+            border-top: 1px solid rgba(0,168,89,0.3);
             padding: 3rem 2rem 1.5rem;
             margin-top: 5rem;
         }
@@ -319,19 +359,19 @@
             margin: 0 auto;
         }
         .footer-col h4 {
-            color: var(--primary);
+            color: var(--rwanda-green);
             margin-bottom: 1rem;
             font-size: 1.1rem;
         }
         .footer-col a {
             display: block;
-            color: #aaa;
+            color: var(--text-muted);
             text-decoration: none;
             margin: 0.5rem 0;
             transition: var(--transition);
         }
         .footer-col a:hover {
-            color: var(--primary);
+            color: var(--rwanda-green);
             transform: translateX(5px);
         }
         .footer-bottom {
@@ -340,7 +380,7 @@
             margin-top: 2rem;
             border-top: 1px solid rgba(255,255,255,0.05);
             font-size: 0.85rem;
-            color: #888;
+            color: var(--text-muted);
         }
         .social-icons {
             display: flex;
@@ -351,18 +391,18 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: rgba(10,255,157,0.1);
+            background: rgba(0,168,89,0.12);
             display: flex;
             align-items: center;
             justify-content: center;
             transition: var(--transition);
         }
         .social-icons a:hover {
-            background: var(--primary);
+            background: var(--rwanda-green);
             transform: translateY(-3px);
         }
         .social-icons a:hover i {
-            color: #010101;
+            color: white;
         }
 
         /* Mobile Responsive */
@@ -391,10 +431,9 @@
             }
         }
 
-        /* Misc */
         .glow-line {
             height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
+            background: linear-gradient(90deg, transparent, var(--rwanda-green), var(--rwanda-blue), transparent);
             margin: 1rem auto;
         }
         .container {
@@ -411,7 +450,7 @@
             position: fixed;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(10,255,157,0.15), transparent);
+            background: radial-gradient(circle, rgba(0,168,89,0.1), transparent);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9998;
@@ -420,8 +459,9 @@
         .timeline-item {
             padding: 0.8rem;
             margin: 0.5rem 0;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.03);
             border-radius: 12px;
+            border-left: 3px solid var(--rwanda-green);
         }
         .cursor {
             animation: blink 1s infinite;
@@ -429,14 +469,25 @@
         @keyframes blink {
             0%,100%{opacity:1} 50%{opacity:0}
         }
+        .flag-badge {
+            background: rgba(0,168,89,0.12);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
     </style>
 </head>
 <body>
 
 <div class="loading-screen" id="loading">
     <div class="loader"></div>
-    <h2 style="margin-top: 1rem; background: linear-gradient(135deg, #0aff9d, #3a86ff); -webkit-background-clip: text; background-clip: text; color: transparent;">IMENA Hub</h2>
-    <p style="margin-top: 0.5rem;">Loading the future of Rwandan innovation...</p>
+    <div style="margin-top: 1rem; text-align: center;">
+        <h2 style="background: linear-gradient(135deg, #FFFFFF, #00A859, #00A3E0); -webkit-background-clip: text; background-clip: text; color: transparent;">IMENA Hub</h2>
+        <p style="margin-top: 0.5rem; color: #E0E6ED;">United Digital Ecosystem of Rwanda</p>
+        <p style="margin-top: 0.3rem; font-size: 0.8rem; color: #A0AAB8;">Founded by TUYISENGE Jean Chrisostom</p>
+    </div>
 </div>
 
 <canvas id="bg-canvas"></canvas>
@@ -445,16 +496,16 @@
 
 <!-- Navigation -->
 <nav class="navbar" id="navbar">
-    <div class="logo"><i class="fas fa-brain"></i> IMENA Hub</div>
+    <div class="logo"><i class="fas fa-globe-africa"></i> IMENA Hub</div>
     <div class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></div>
     <div class="nav-links" id="navLinks">
         <a href="#home" class="active">Home</a>
-        <a href="#projects">Projects</a>
+        <a href="#projects">Ecosystem</a>
         <a href="#founder">Founder</a>
         <a href="#community">Community</a>
         <a href="#pricing">Membership</a>
         <button class="btn-outline" id="loginBtn" style="padding: 0.4rem 1.2rem;">Sign In</button>
-        <button class="btn-primary" id="signupBtn" style="padding: 0.4rem 1.2rem;">Get Started</button>
+        <button class="btn-primary" id="signupBtn" style="padding: 0.4rem 1.2rem;">Join Now</button>
     </div>
 </nav>
 
@@ -464,131 +515,137 @@
         <div class="container">
             <div class="hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
                 <div>
-                    <div class="typewriter" style="font-size: 1rem; color: var(--primary); margin-bottom: 1rem;">
+                    <div class="hero-badge">
+                        <i class="fas fa-flag-checkered"></i> 🇷🇼 Rwanda's United Digital Ecosystem
+                    </div>
+                    <div style="font-size: 1rem; color: var(--rwanda-blue); margin-bottom: 0.5rem;">
                         <span id="typingText"></span><span class="cursor">|</span>
                     </div>
-                    <h1 style="font-size: 4rem; font-weight: 800; line-height: 1.2;">Building Rwanda's <span style="color: var(--primary);">Digital Future</span></h1>
-                    <p style="font-size: 1.2rem; margin: 1.5rem 0; opacity: 0.8;">AI-powered learning, EdTech innovation, and a community of heroes building technology that serves and protects.</p>
+                    <h1 style="font-size: 4rem; font-weight: 800; line-height: 1.2;">Publishing <span style="color: var(--rwanda-green);">Rwanda</span> Across the World <br>Through <span style="color: var(--rwanda-blue);">ICT & Development</span></h1>
+                    <p style="font-size: 1.2rem; margin: 1.5rem 0; opacity: 0.9; line-height: 1.5;">IMENA Hub unites CV Builder, Trainer AI, Trinity College, and more — a complete ecosystem founded by <strong style="color: var(--rwanda-green);">TUYISENGE Jean Chrisostom</strong> to showcase Rwandan innovation globally.</p>
                     <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin: 2rem 0;">
-                        <div><span class="stat-number" id="studentCount">0</span><p>Active Students</p></div>
-                        <div><span class="stat-number" id="projectCount">0</span><p>Projects Launched</p></div>
-                        <div><span class="stat-number" id="countryCount">0</span><p>Countries</p></div>
+                        <div><span class="stat-number" id="studentCount">0</span><p style="color: var(--text-dim);">Active Users</p></div>
+                        <div><span class="stat-number" id="projectCount">0</span><p style="color: var(--text-dim);">Ecosystem Projects</p></div>
+                        <div><span class="stat-number" id="countryCount">0</span><p style="color: var(--text-dim);">Countries Reached</p></div>
                     </div>
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                         <button class="btn-primary" id="exploreHeroBtn">Explore Ecosystem →</button>
-                        <button class="btn-outline" id="watchVideoBtn"><i class="fas fa-play"></i> Watch Intro</button>
+                        <button class="btn-secondary" id="watchVideoBtn"><i class="fas fa-play"></i> Rwanda Digital Vision</button>
                     </div>
-                    <div class="trust-badges" style="display: flex; gap: 2rem; margin-top: 2rem; opacity: 0.6;">
-                        <span><i class="fas fa-shield-alt"></i> ISO Certified</span>
-                        <span><i class="fas fa-lock"></i> Enterprise Security</span>
-                        <span><i class="fas fa-award"></i> Award-Winning</span>
+                    <div class="trust-badges" style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem;">
+                        <span class="flag-badge"><i class="fas fa-check-circle" style="color: #00A859;"></i> REB Certified</span>
+                        <span class="flag-badge"><i class="fas fa-globe" style="color: #00A3E0;"></i> Global Recognition</span>
+                        <span class="flag-badge"><i class="fas fa-award" style="color: #FFFFFF;"></i> Innovation Leader</span>
                     </div>
                 </div>
-                <div id="hologramContainer" style="height: 400px; position: relative;"></div>
+                <div id="hologramContainer" style="height: 450px; position: relative;"></div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section with Live IMENA Projects -->
+    <!-- Projects Section - Complete IMENA Ecosystem -->
     <section id="projects">
         <div class="container">
-            <h2 style="font-size: 2.8rem; text-align: center;">IMENA Digital Ecosystem</h2>
+            <h2 style="font-size: 2.8rem; text-align: center;">The Complete <span style="color: var(--rwanda-green);">IMENA Ecosystem</span></h2>
             <div class="glow-line" style="width: 150px;"></div>
-            <p style="text-align: center; margin-bottom: 2rem;">Live projects building Rwanda's tech future — click any card to explore</p>
+            <p style="text-align: center; margin-bottom: 1rem; color: var(--text-dim);">Four pillars of Rwandan digital innovation — unified under one vision</p>
+            <p style="text-align: center; margin-bottom: 2rem; font-size: 0.9rem;"><i class="fas fa-crown" style="color: var(--rwanda-blue);"></i> Founded & Organized by TUYISENGE Jean Chrisostom</p>
             <div class="project-filters" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 2rem 0;">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="ai">AI & ML</button>
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="ai">AI & Learning</button>
                 <button class="filter-btn" data-filter="edtech">EdTech</button>
-                <button class="filter-btn" data-filter="web">Web Dev</button>
+                <button class="filter-btn" data-filter="web">Web Tools</button>
             </div>
             <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                 <!-- IMENA Trainer AI -->
                 <div class="project-card" data-category="ai" onclick="window.open('https://stomcodev.github.io/IMENA-TRAINER-AI/', '_blank')">
-                    <div class="project-icon"><i class="fas fa-brain fa-3x" style="color: var(--primary);"></i></div>
+                    <div class="project-icon"><i class="fas fa-robot"></i></div>
                     <h3>IMENA Trainer AI</h3>
-                    <p>REB-aligned intelligent national learning platform with personalized AI tutoring for all levels from P1 to S6.</p>
+                    <p>REB-aligned intelligent national learning platform. AI tutoring for all levels from P1 to S6 with multi-language support.</p>
                     <div class="tech-stack" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
-                        <span style="background: rgba(10,255,157,0.2); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem;">AI</span>
-                        <span style="background: rgba(10,255,157,0.2); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem;">REB Curriculum</span>
-                        <span style="background: rgba(10,255,157,0.2); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem;">Multi-language</span>
+                        <span style="background: rgba(0,168,89,0.2); padding: 0.2rem 0.8rem; border-radius: 20px;">AI</span>
+                        <span style="background: rgba(0,163,224,0.2); padding: 0.2rem 0.8rem; border-radius: 20px;">REB Curriculum</span>
                     </div>
-                    <div class="progress-bar" style="height: 4px; background: #333; border-radius: 2px; margin-top: 1rem;">
-                        <div style="width: 85%; height: 100%; background: var(--primary); border-radius: 2px;"></div>
+                    <div class="progress-bar" style="height: 4px; background: #2C2C3A; border-radius: 2px; margin-top: 1rem;">
+                        <div style="width: 88%; height: 100%; background: var(--rwanda-green); border-radius: 2px;"></div>
                     </div>
                 </div>
                 <!-- IMENA CV Builder -->
                 <div class="project-card" data-category="web" onclick="window.open('https://imena-cv-builder.netlify.app/', '_blank')">
-                    <div class="project-icon"><i class="fas fa-file-alt fa-3x" style="color: var(--primary);"></i></div>
+                    <div class="project-icon"><i class="fas fa-file-alt"></i></div>
                     <h3>IMENA CV Builder</h3>
-                    <p>Free professional CV builder with real-time preview, multiple templates, and PDF download. Available in English, Kinyarwanda, and French.</p>
-                    <div class="tech-stack" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
-                        <span style="background: rgba(10,255,157,0.2); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem;">React</span>
-                        <span style="background: rgba(10,255,157,0.2); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem;">PDF Export</span>
-                    </div>
-                    <div class="progress-bar"><div style="width: 92%; background: var(--primary);"></div></div>
+                    <p>Free professional CV builder with real-time preview, multiple templates, and PDF download. English, Kinyarwanda, Français.</p>
+                    <div class="tech-stack"><span style="background: rgba(0,168,89,0.2); padding: 0.2rem 0.8rem; border-radius: 20px;">React</span></div>
+                    <div class="progress-bar"><div style="width: 95%; background: var(--rwanda-green);"></div></div>
                 </div>
                 <!-- IMENA Trinity College -->
                 <div class="project-card" data-category="edtech" onclick="window.open('https://stomcodev.github.io/IMENA-TRINITY-COLLEGE/', '_blank')">
-                    <div class="project-icon"><i class="fas fa-university fa-3x" style="color: var(--primary);"></i></div>
+                    <div class="project-icon"><i class="fas fa-university"></i></div>
                     <h3>IMENA Trinity College</h3>
-                    <p>Bugesera's premier educational institution from Nursery to O'Level. Quality education with modern facilities and character development.</p>
-                    <div class="tech-stack" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
-                        <span style="background: rgba(10,255,157,0.2); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem;">School CMS</span>
-                        <span style="background: rgba(10,255,157,0.2); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem;">REB Curriculum</span>
-                    </div>
-                    <div class="progress-bar"><div style="width: 78%; background: var(--primary);"></div></div>
+                    <p>Bugesera's premier educational institution from Nursery to O'Level. Quality education, modern facilities, character development.</p>
+                    <div class="tech-stack"><span style="background: rgba(0,168,89,0.2); padding: 0.2rem 0.8rem; border-radius: 20px;">REB Curriculum</span></div>
+                    <div class="progress-bar"><div style="width: 85%; background: var(--rwanda-green);"></div></div>
                 </div>
             </div>
             <div class="glow-line" style="margin: 2rem 0;"></div>
-            <p style="text-align: center; font-size: 0.9rem;">🚀 More projects: ICT Holiday Camp, EdTech Systems, Digital Learning Labs — expanding the ecosystem.</p>
+            <div style="text-align: center; background: rgba(0,168,89,0.08); border-radius: 1rem; padding: 1.5rem; border: 1px solid rgba(0,168,89,0.2);">
+                <i class="fas fa-quote-left" style="color: var(--rwanda-green); font-size: 2rem; opacity: 0.6;"></i>
+                <p style="font-style: italic; font-size: 1.1rem;">"The IMENA ecosystem is the combination of all my projects — a united digital home for Rwandan success, honoring our heroes and showcasing our nation to the world."</p>
+                <p style="margin-top: 0.5rem; font-weight: 600;">— TUYISENGE Jean Chrisostom, Founder</p>
+            </div>
         </div>
     </section>
 
-    <!-- Founder Section with Developer Portfolio -->
+    <!-- Founder Section -->
     <section id="founder">
         <div class="container">
             <div class="glass-card" style="padding: 2.5rem;">
-                <h2 style="text-align: center;">Founder & Visionary</h2>
+                <h2 style="text-align: center;">Founder & <span style="color: var(--rwanda-green);">Visionary Leader</span></h2>
                 <div class="glow-line" style="width: 100px;"></div>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
                     <div>
                         <h3 style="font-size: 2rem;">TUYISENGE Jean Chrisostom</h3>
-                        <p style="margin: 1rem 0;">Passionate student teacher & web developer creating innovative solutions for modern education and digital experiences. Pursuing a Diploma in Language Education at TTC MUHANGA.</p>
+                        <div class="flag-badge" style="margin: 0.5rem 0;"><i class="fas fa-map-marker-alt"></i> Karumuna, Ntarama, Bugesera — Rwanda</div>
+                        <p style="margin: 1rem 0; line-height: 1.6;">Passionate student teacher & web developer creating innovative solutions for modern education. Pursuing Diploma in Language Education at TTC MUHANGA. Founder of the complete IMENA digital ecosystem.</p>
                         <div class="skills">
-                            <div>ICT Architecture <span>95%</span><div style="height: 6px; background:#333; border-radius:3px; margin:5px 0;"><div style="width:95%; height:100%; background:var(--primary); border-radius:3px;"></div></div></div>
-                            <div>EdTech Development <span>90%</span><div style="height: 6px; background:#333; border-radius:3px; margin:5px 0;"><div style="width:90%; height:100%; background:var(--primary); border-radius:3px;"></div></div></div>
-                            <div>AI Integration <span>88%</span><div style="height: 6px; background:#333; border-radius:3px; margin:5px 0;"><div style="width:88%; height:100%; background:var(--primary); border-radius:3px;"></div></div></div>
+                            <div>ICT Architecture <span>95%</span><div style="height: 6px; background:#2C2C3A; border-radius:3px; margin:5px 0;"><div style="width:95%; height:100%; background:var(--rwanda-green); border-radius:3px;"></div></div></div>
+                            <div>EdTech Development <span>92%</span><div style="height: 6px; background:#2C2C3A; border-radius:3px; margin:5px 0;"><div style="width:92%; height:100%; background:var(--rwanda-blue); border-radius:3px;"></div></div></div>
+                            <div>AI Integration <span>88%</span><div style="height: 6px; background:#2C2C3A; border-radius:3px; margin:5px 0;"><div style="width:88%; height:100%; background:var(--rwanda-green); border-radius:3px;"></div></div></div>
                         </div>
-                        <div style="margin-top: 1.5rem;">
-                            <button class="btn-outline" onclick="window.open('https://stomcodev.github.io/TUYISENGE-Jean-Chrisostom/', '_blank')"><i class="fas fa-user"></i> View Full Portfolio</button>
+                        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <button class="btn-primary" onclick="window.open('https://stomcodev.github.io/TUYISENGE-Jean-Chrisostom/', '_blank')"><i class="fas fa-user"></i> Full Portfolio</button>
+                            <button class="btn-outline" onclick="window.open('mailto:tuyisengejeanchrisostome@gmail.com')"><i class="fas fa-envelope"></i> Contact</button>
                         </div>
                     </div>
                     <div class="timeline">
-                        <div class="timeline-item"><i class="fas fa-calendar"></i> 2020 - Founded IMENA Initiative</div>
-                        <div class="timeline-item"><i class="fas fa-calendar"></i> 2022 - Launched CV Builder</div>
-                        <div class="timeline-item"><i class="fas fa-calendar"></i> 2023 - IMENA Trinity College Website</div>
-                        <div class="timeline-item"><i class="fas fa-calendar"></i> 2024 - IMENA Trainer AI Platform</div>
-                        <div class="timeline-item"><i class="fas fa-calendar"></i> 2025 - Full Ecosystem Expansion</div>
+                        <div class="timeline-item"><i class="fas fa-calendar" style="color: var(--rwanda-green);"></i> 2020 - Founded IMENA Initiative</div>
+                        <div class="timeline-item"><i class="fas fa-calendar" style="color: var(--rwanda-blue);"></i> 2022 - Launched CV Builder</div>
+                        <div class="timeline-item"><i class="fas fa-calendar" style="color: var(--rwanda-green);"></i> 2023 - IMENA Trinity College Website</div>
+                        <div class="timeline-item"><i class="fas fa-calendar" style="color: var(--rwanda-blue);"></i> 2024 - IMENA Trainer AI Platform</div>
+                        <div class="timeline-item"><i class="fas fa-calendar" style="color: var(--rwanda-green);"></i> 2025 - Full Ecosystem United</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Community Section -->
+    <!-- Community & Success Stories -->
     <section id="community">
         <div class="container">
-            <h2 style="text-align: center;">Community Hall of Fame</h2>
+            <h2 style="text-align: center;">Rwandan <span style="color: var(--rwanda-green);">Success Stories</span></h2>
             <div class="glow-line" style="width: 150px;"></div>
             <div class="leaderboard glass-card" style="padding: 2rem;">
-                <div class="leaderboard-item" style="display: flex; justify-content: space-between; padding: 1rem; border-bottom: 1px solid rgba(10,255,157,0.2);">
-                    <span><i class="fas fa-crown" style="color: gold;"></i> 1. NTABARONKERARIMWE Saidath</span><span>12,450 XP - Parent Leader</span>
+                <div class="leaderboard-item" style="display: flex; justify-content: space-between; padding: 1rem; border-bottom: 1px solid rgba(0,168,89,0.2);">
+                    <span><i class="fas fa-crown" style="color: #F1C40F;"></i> <strong>NTABARONKERARIMWE Saidath</strong></span>
+                    <span style="color: var(--rwanda-green);">"IMENA Trinity transformed my child's future"</span>
                 </div>
-                <div class="leaderboard-item" style="display: flex; justify-content: space-between; padding: 1rem; border-bottom: 1px solid rgba(10,255,157,0.2);">
-                    <span><i class="fas fa-star" style="color: silver;"></i> 2. NIYONKURU Emmanuel</span><span>9,820 XP - S3 Promotion Leader 2023</span>
+                <div class="leaderboard-item" style="display: flex; justify-content: space-between; padding: 1rem; border-bottom: 1px solid rgba(0,168,89,0.2);">
+                    <span><i class="fas fa-star" style="color: silver;"></i> <strong>NIYONKURU Emmanuel</strong></span>
+                    <span style="color: var(--rwanda-green);">"S3 Leader — now at top university"</span>
                 </div>
                 <div class="leaderboard-item" style="display: flex; justify-content: space-between; padding: 1rem;">
-                    <span><i class="fas fa-award"></i> 3. TUYISHIMIRE Jean Pierre</span><span>8,340 XP - Community Leader</span>
+                    <span><i class="fas fa-award" style="color: #CD7F32;"></i> <strong>TUYISHIMIRE Jean Pierre</strong></span>
+                    <span style="color: var(--rwanda-green);">"Community leader & IMENA advocate"</span>
                 </div>
             </div>
         </div>
@@ -597,20 +654,20 @@
     <!-- Pricing Section -->
     <section id="pricing">
         <div class="container">
-            <h2 style="text-align: center;">Premium Membership Plans</h2>
+            <h2 style="text-align: center;">Join the <span style="color: var(--rwanda-green);">IMENA Movement</span></h2>
             <div class="glow-line"></div>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
                 <div class="glass-card" style="padding: 2rem; text-align: center;">
-                    <h3>Starter</h3>
-                    <p class="price" style="font-size: 2.5rem; font-weight: 800;">FREE</p>
-                    <ul style="list-style: none; margin: 1rem 0;"><li>✓ Basic Courses</li><li>✓ Community Access</li><li>✓ CV Builder</li></ul>
-                    <button class="btn-outline" onclick="alert('Registration coming soon! Join our waitlist.')">Get Started</button>
+                    <h3>Free Access</h3>
+                    <p class="price" style="font-size: 2.5rem; font-weight: 800; color: var(--rwanda-green);">₿0</p>
+                    <ul style="list-style: none; margin: 1rem 0; color: var(--text-dim);"><li>✓ CV Builder Access</li><li>✓ Basic Courses</li><li>✓ Community Access</li></ul>
+                    <button class="btn-outline" onclick="alert('Free registration coming soon! Be part of Rwanda\'s digital future.')">Get Started →</button>
                 </div>
-                <div class="glass-card" style="padding: 2rem; text-align: center; border: 2px solid var(--primary);">
-                    <h3>Pro</h3>
+                <div class="glass-card" style="padding: 2rem; text-align: center; border: 2px solid var(--rwanda-green);">
+                    <h3>Pro Member</h3>
                     <p class="price" style="font-size: 2.5rem;">$29<span style="font-size:1rem;">/mo</span></p>
-                    <ul style="list-style: none;"><li>✓ All Courses</li><li>✓ AI Mentor Access</li><li>✓ Certificate Generation</li><li>✓ Priority Support</li></ul>
-                    <button class="btn-primary" onclick="alert('Secure checkout demo. MTN MoMo, Airtel, and card coming soon.')">Subscribe →</button>
+                    <ul style="list-style: none; color: var(--text-dim);"><li>✓ All Ecosystem Access</li><li>✓ AI Mentor (Trainer AI)</li><li>✓ Certificate Generation</li><li>✓ Priority Support</li></ul>
+                    <button class="btn-primary" onclick="alert('Secure checkout. MTN MoMo, Airtel, Card — supporting Rwandan payment methods.')">Subscribe →</button>
                 </div>
             </div>
         </div>
@@ -620,8 +677,8 @@
     <footer class="premium-footer">
         <div class="footer-grid">
             <div class="footer-col">
-                <h4><i class="fas fa-brain"></i> IMENA Hub</h4>
-                <p style="color: #aaa; margin-bottom: 1rem;">Building ideas and digital solutions for Rwanda through technology, innovation, and education.</p>
+                <h4><i class="fas fa-globe-africa"></i> IMENA Hub</h4>
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">United Digital Ecosystem of Rwanda<br>Publishing Rwanda across the world through ICT and development.</p>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -630,11 +687,11 @@
                 </div>
             </div>
             <div class="footer-col">
-                <h4>Ecosystem</h4>
-                <a href="#" onclick="window.open('https://imena-cv-builder.netlify.app/', '_blank')">CV Builder</a>
-                <a href="#" onclick="window.open('https://stomcodev.github.io/IMENA-TRAINER-AI/', '_blank')">Trainer AI</a>
-                <a href="#" onclick="window.open('https://stomcodev.github.io/IMENA-TRINITY-COLLEGE/', '_blank')">Trinity College</a>
-                <a href="#" onclick="window.open('https://imena-ecosystem.netlify.app/', '_blank')">IMENA Ecosystem</a>
+                <h4>Ecosystem Projects</h4>
+                <a href="#" onclick="window.open('https://imena-cv-builder.netlify.app/', '_blank')">📄 CV Builder</a>
+                <a href="#" onclick="window.open('https://stomcodev.github.io/IMENA-TRAINER-AI/', '_blank')">🤖 Trainer AI</a>
+                <a href="#" onclick="window.open('https://stomcodev.github.io/IMENA-TRINITY-COLLEGE/', '_blank')">🏫 Trinity College</a>
+                <a href="#" onclick="window.open('https://stomcodev.github.io/TUYISENGE-Jean-Chrisostom/', '_blank')">👨‍💻 Founder Portfolio</a>
             </div>
             <div class="footer-col">
                 <h4>Resources</h4>
@@ -652,8 +709,9 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© <span id="currentYear"></span> IMENA Hub. Developed by TUYISENGE Jean Chrisostom (StomCodeV).</p>
-            <p style="margin-top: 0.5rem; font-size: 0.75rem;">Mutara III Rudahigwa • Agathe Uwiringiyimana • Nyange Students — Their spirit lives in every line of code.</p>
+            <p>© <span id="currentYear"></span> IMENA Hub. Founded & Organized by <strong style="color: var(--rwanda-green);">TUYISENGE Jean Chrisostom (StomCodeV)</strong></p>
+            <p style="margin-top: 0.5rem; font-size: 0.75rem;"><i class="fas fa-heart" style="color: var(--rwanda-green);"></i> In honor of Rwanda's Imena Heroes — Mutara III Rudahigwa • Agathe Uwiringiyimana • Nyange Students</p>
+            <p style="margin-top: 0.3rem; font-size: 0.7rem;">Publishing Rwanda across the world through technology, innovation, and education.</p>
         </div>
     </footer>
 </main>
@@ -662,11 +720,11 @@
 <div class="chatbot">
     <div class="chat-toggle" id="chatToggle"><i class="fas fa-comment-dots fa-2x"></i></div>
     <div class="chat-window" id="chatWindow">
-        <div style="padding: 1rem; background: var(--primary); color: #010101; font-weight: bold;">🤖 IMENA AI Assistant</div>
-        <div id="chatMessages" style="flex:1; padding: 1rem; overflow-y: auto;">Hello! 👋 I'm your AI learning companion. Ask me about IMENA Hub, our projects, or how to get started!</div>
+        <div style="padding: 1rem; background: linear-gradient(135deg, #00A859, #00A3E0); color: white; font-weight: bold;">🇷🇼 IMENA AI Assistant</div>
+        <div id="chatMessages" style="flex:1; padding: 1rem; overflow-y: auto; color: var(--text-dim);">Muraho! 👋 I'm your AI guide to the IMENA Ecosystem. Ask me about our projects, founder, or how to get involved!</div>
         <div style="padding: 1rem; display: flex; gap: 0.5rem;">
-            <input type="text" id="chatInput" placeholder="Ask me..." style="flex:1; padding: 0.5rem; border-radius: 20px; border: none; background: #222; color: white;">
-            <button id="chatSend" style="background: var(--primary); border: none; padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer;">Send</button>
+            <input type="text" id="chatInput" placeholder="Ask me..." style="flex:1; padding: 0.5rem; border-radius: 20px; border: none; background: #1A1A2E; color: white;">
+            <button id="chatSend" style="background: var(--rwanda-green); border: none; padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; color: white;">Send</button>
         </div>
     </div>
 </div>
@@ -674,27 +732,28 @@
 <script type="module">
     import * as THREE from 'three';
     
-    // Loading screen
     setTimeout(() => document.getElementById('loading').classList.add('hidden'), 1500);
     
-    // Three.js Scene
     const canvas = document.getElementById('bg-canvas');
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x010118);
-    scene.fog = new THREE.FogExp2(0x010118, 0.008);
+    scene.background = new THREE.Color(0x05080F);
+    scene.fog = new THREE.FogExp2(0x05080F, 0.006);
     const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.set(0, 2, 12);
     const renderer = new THREE.WebGLRenderer({ canvas, alpha: false });
     renderer.setSize(window.innerWidth, window.innerHeight);
     
-    const ambient = new THREE.AmbientLight(0x222222);
+    const ambient = new THREE.AmbientLight(0x1A1A2E);
     scene.add(ambient);
-    const light1 = new THREE.PointLight(0x0aff9d, 0.8);
+    const light1 = new THREE.PointLight(0x00A859, 0.6);
     light1.position.set(3, 4, 5);
     scene.add(light1);
+    const light2 = new THREE.PointLight(0x00A3E0, 0.4);
+    light2.position.set(-2, 3, 6);
+    scene.add(light2);
     
-    const knotGeo = new THREE.TorusKnotGeometry(1.2, 0.28, 200, 32, 3, 4);
-    const knotMat = new THREE.MeshStandardMaterial({ color: 0x0aff9d, emissive: 0x0a5f3a, emissiveIntensity: 0.5 });
+    const knotGeo = new THREE.TorusKnotGeometry(1.3, 0.3, 200, 32, 3, 4);
+    const knotMat = new THREE.MeshStandardMaterial({ color: 0x00A859, emissive: 0x007A42, emissiveIntensity: 0.3, metalness: 0.7 });
     const knot = new THREE.Mesh(knotGeo, knotMat);
     scene.add(knot);
     
@@ -706,7 +765,7 @@
         positions[i*3+2] = (Math.random() - 0.5) * 30 - 10;
     }
     particlesGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    const particleMat = new THREE.PointsMaterial({ color: 0x4cc9f0, size: 0.05, transparent: true, blending: THREE.AdditiveBlending });
+    const particleMat = new THREE.PointsMaterial({ color: 0x00A3E0, size: 0.04, transparent: true, blending: THREE.AdditiveBlending });
     const particles = new THREE.Points(particlesGeo, particleMat);
     scene.add(particles);
     
@@ -731,26 +790,23 @@
 </script>
 
 <script>
-    // GSAP Scroll Animations
     gsap.registerPlugin(ScrollTrigger);
     gsap.utils.toArray('.glass-card, .project-card').forEach(el => {
         gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 85%' }, y: 50, opacity: 0, duration: 0.8 });
     });
     
-    // Typewriter Effect
-    const text = "AI-Powered Learning Ecosystem for Rwanda";
+    const text = "Founded & Organized by TUYISENGE Jean Chrisostom • Honoring Rwanda's Imena Heroes";
     let i = 0;
     function typeWriter() {
         if (i < text.length) {
             document.getElementById('typingText').innerHTML += text.charAt(i);
             i++;
-            setTimeout(typeWriter, 50);
+            setTimeout(typeWriter, 40);
         }
     }
     typeWriter();
     
-    // Animated Counters
-    const counters = [{ el: 'studentCount', target: 28456 }, { el: 'projectCount', target: 47 }, { el: 'countryCount', target: 112 }];
+    const counters = [{ el: 'studentCount', target: 28456 }, { el: 'projectCount', target: 4 }, { el: 'countryCount', target: 112 }];
     counters.forEach(counter => {
         let count = 0;
         const increment = counter.target / 80;
@@ -761,7 +817,6 @@
         }, 30);
     });
     
-    // Navigation & Active Section Tracking
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-links a');
     window.addEventListener('scroll', () => {
@@ -777,19 +832,16 @@
         document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
     });
     
-    // Mobile Menu
     document.getElementById('menuBtn').addEventListener('click', () => {
         document.getElementById('navLinks').classList.toggle('active');
     });
     
-    // Mouse Trail Effect
     const trail = document.getElementById('mouseTrail');
     document.addEventListener('mousemove', (e) => {
         trail.style.transform = `translate(${e.clientX - 200}px, ${e.clientY - 200}px)`;
     });
     
-    // Magnetic Buttons
-    document.querySelectorAll('.btn-primary, .btn-outline').forEach(btn => {
+    document.querySelectorAll('.btn-primary, .btn-outline, .btn-secondary').forEach(btn => {
         btn.addEventListener('mousemove', (e) => {
             const rect = btn.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width/2;
@@ -799,7 +851,6 @@
         btn.addEventListener('mouseleave', () => btn.style.transform = 'translate(0,0)');
     });
     
-    // Project Filtering
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -812,7 +863,6 @@
         });
     });
     
-    // Chatbot
     const chatToggle = document.getElementById('chatToggle');
     const chatWindow = document.getElementById('chatWindow');
     chatToggle.onclick = () => chatWindow.classList.toggle('active');
@@ -821,8 +871,8 @@
         const msg = input.value;
         if (!msg) return;
         const messages = document.getElementById('chatMessages');
-        messages.innerHTML += `<div>👤 ${msg}</div>`;
-        messages.innerHTML += `<div>🤖 Thank you for reaching out! Check out our CV Builder, Trainer AI, or Trinity College projects. 🇷🇼</div>`;
+        messages.innerHTML += `<div style="margin:5px 0;">👤 ${msg}</div>`;
+        messages.innerHTML += `<div style="margin:5px 0; color:#00A859;">🤖 Murakoze! 🇷🇼 Explore our CV Builder, Trainer AI, or Trinity College. United for Rwanda's digital future!</div>`;
         input.value = '';
         messages.scrollTop = messages.scrollHeight;
     };
@@ -830,22 +880,21 @@
         if (e.key === 'Enter') document.getElementById('chatSend').click();
     });
     
-    // Button Actions
     document.getElementById('exploreHeroBtn').onclick = () => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
-    document.getElementById('watchVideoBtn').onclick = () => alert("🎥 IMENA Hub is building Rwanda's digital future through AI and EdTech innovation.");
-    document.getElementById('loginBtn').onclick = () => alert("🔐 Login system coming soon. Join our waitlist!");
-    document.getElementById('signupBtn').onclick = () => alert("📝 Early access registration opens next week!");
+    document.getElementById('watchVideoBtn').onclick = () => alert("🎥 IMENA Hub: Publishing Rwanda across the world through ICT, innovation, and education.");
+    document.getElementById('loginBtn').onclick = () => alert("🔐 Sign in to access the full IMENA Ecosystem. Coming soon!");
+    document.getElementById('signupBtn').onclick = () => alert("📝 Join Rwanda's digital revolution. Registration opening soon!");
     
-    // Footer Year
     document.getElementById('currentYear').innerText = new Date().getFullYear();
     
-    // 3D Hologram placeholder (Rwanda map effect)
     const hologramDiv = document.getElementById('hologramContainer');
     if (hologramDiv) {
-        hologramDiv.innerHTML = `<div style="width:100%; height:100%; background: radial-gradient(circle at center, rgba(10,255,157,0.15), transparent); border-radius: 20px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-            <i class="fas fa-map-africa" style="font-size: 6rem; color: var(--primary); opacity: 0.6;"></i>
-            <p style="margin-top: 1rem;">🇷🇼 Rwanda Innovation Hub</p>
-            <p style="font-size: 0.8rem; opacity: 0.7;">Powered by IMENA Ecosystem</p>
+        hologramDiv.innerHTML = `<div style="width:100%; height:100%; background: radial-gradient(circle at center, rgba(0,168,89,0.08), transparent); border-radius: 20px; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center;">
+            <i class="fas fa-flag-checkered" style="font-size: 5rem; color: var(--rwanda-green); opacity: 0.8;"></i>
+            <i class="fas fa-globe-africa" style="font-size: 4rem; color: var(--rwanda-blue); margin-top: 1rem; opacity: 0.7;"></i>
+            <p style="margin-top: 1.5rem; font-weight: 600; color: var(--rwanda-green);">🇷🇼 Rwanda's United Digital Ecosystem</p>
+            <p style="font-size: 0.8rem; opacity: 0.7;">CV Builder • Trainer AI • Trinity College</p>
+            <p style="font-size: 0.7rem; margin-top: 0.5rem;">Founded by TUYISENGE Jean Chrisostom</p>
         </div>`;
     }
 </script>
